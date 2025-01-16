@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "incremental": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/components/*": ["./components/*"],
+      "@/server/*": ["./server/*"],
+      "@/features/*": ["./features/*"],
+      "@/layouts/*": ["./layouts/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/public/*": ["../public/*"],
+      "@/themes/*": ["./themes/*"],
+      "@ijyu-3166/ui-lib/*": ["../../../packages/ui-lib/src/*"],
+      "@ijyu-3166/ui-lib": ["../../../packages/ui-lib/src/index"],
+      "@ijyu-3166/core-lib/*": ["../../../packages/core-lib/src/*"],
+      "@ijyu-3166/core-lib": ["../../../packages/core-lib/src/index"],
+      "@ijyu-3166/ts-utils": ["../../../packages/ts-utils/src/index"]
+    }
+  },
+  "exclude": ["**/node_modules", "**/.*/*"],
+  "include": [
+    ".eslintrc.*",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.json"
+  ]
+}

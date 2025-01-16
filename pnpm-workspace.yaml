@@ -1,0 +1,3 @@
+packages:
+  - 'apps/*' # 애플리케이션
+  - 'packages/*' # 공통 코드
