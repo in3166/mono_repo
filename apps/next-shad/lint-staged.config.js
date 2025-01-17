@@ -7,7 +7,10 @@
  * {@link https://github.com/belgattitude/nextjs-monorepo-example/blob/main/docs/about-lint-staged.md}
  */
 
-import { concatFilesForPrettier, getEslintFixCmd } from '../../lint-staged.common.js'
+const {
+  concatFilesForPrettier,
+  getEslintFixCmd
+} = require('../../lint-staged.common.js')
 
 /**
  * @type {Record<string, (filenames: string[]) => string | string[] | Promise<string | string[]>>}
@@ -30,4 +33,4 @@ const rules = {
   }
 }
 
-export default rules
+module.exports = rules
