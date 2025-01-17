@@ -1,9 +1,9 @@
 <div align="center">
-  <h1 align="center"><a aria-label="NextJs Monorepo" href="https://github.com/belgattitude/nextjs-monorepo-example">NextJs Monorepo</a></h1>
+  <h1 align="center"><a aria-label="NextJs Monorepo" href="https://github.com/in3166/mono_repo">NextJs Monorepo</a></h1>
   <p align="center"><strong>Monorepo concepts, tips and tricks oriented around NextJs</strong></p>
 </div>
 <p align="center">
-  <a aria-label="Build" href="https://github.com/belgattitude/nextjs-monorepo-example/actions?query=workflow%3ACI">
+  <a aria-label="Build" href="https://github.com/in3166/mono_repo/actions?query=workflow%3ACI">
     <img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/belgattitude/nextjs-monorepo-example/main?label=CI&logo=github&style=flat-square">
   </a>
   <a aria-label="Codefactor grade" href=https://www.codefactor.io/repository/github/belgattitude/nextjs-monorepo-example">
@@ -21,10 +21,10 @@
   <a aria-label="LoC">  
     <img alt="LoC" src="https://img.shields.io/tokei/lines/github/belgattitude/nextjs-monorepo-example?style=flat-quare&labelColor=000000" />
   </a>
-  <a aria-label="Top language" href="https://github.com/belgattitude/nextjs-monorepo-example/search?l=typescript">
+  <a aria-label="Top language" href="https://github.com/in3166/mono_repo/search?l=typescript">
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/belgattitude/nextjs-monorepo-example?style=flat-square&labelColor=000&color=blue">
   </a>
-  <a aria-label="Licence" href="https://github.com/belgattitude/nextjs-monorepo-example/blob/main/LICENSE">
+  <a aria-label="Licence" href="https://github.com/in3166/mono_repo/blob/main/LICENSE">
     <img alt="Licence" src="https://img.shields.io/github/license/belgattitude/nextjs-monorepo-example?style=flat-quare&labelColor=000000" />
   </a>
 </p>
@@ -87,7 +87,7 @@ yarn install
 
 ## Structure
 
-[![Open in Gitpod](https://img.shields.io/badge/Open%20In-Gitpod.io-%231966D2?style=for-the-badge&logo=gitpod)](https://gitpod.io/#https://github.com/belgattitude/nextjs-monorepo-example)
+[![Open in Gitpod](https://img.shields.io/badge/Open%20In-Gitpod.io-%231966D2?style=for-the-badge&logo=gitpod)](https://gitpod.io/#https://github.com/in3166/mono_repo)
 
 ```
 .

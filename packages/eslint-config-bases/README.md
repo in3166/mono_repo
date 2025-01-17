@@ -5,7 +5,7 @@
 # About
 
 Example of composable eslint config bases that can be easily shared and fine-tuned by apps and
-packages that lives in a [monorepo](https://github.com/belgattitude/nextjs-monorepo-example).
+packages that lives in a [monorepo](https://github.com/in3166/mono_repo).
 
 ## Features
 

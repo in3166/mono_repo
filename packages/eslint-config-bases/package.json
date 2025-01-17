@@ -77,14 +77,14 @@
     "eslint-config"
   ],
   "author": {
-    "name": "Vanvelthem Sébastien",
-    "url": "https://github.com/belgattitude"
+    "name": "ijyu",
+    "url": "https://github.com/in3166"
   },
   "license": "MIT",
-  "homepage": "https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases",
+  "homepage": "https://github.com/in3166/mono_repo/tree/main/packages/eslint-config-bases",
   "repository": {
     "type": "git",
-    "url": "https://github.com/belgattitude/nextjs-monorepo-example",
+    "url": "https://github.com/in3166/mono_repo",
     "directory": "packages/eslint-config-bases"
   },
   "scripts": {
@@ -130,7 +130,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "es-check": "7.2.1",
-    "eslint": "^9.18.0",
+    "eslint": "8.57.1",
     "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "graphql": "^16.9.0",
@@ -145,7 +145,7 @@
   "peerDependencies": {
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@testing-library/dom": "^10.4.0",
-    "eslint": "^9.18.0",
+    "eslint": "8.57.1",
     "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "graphql": "^16.9.0",

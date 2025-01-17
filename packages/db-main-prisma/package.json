@@ -12,14 +12,14 @@
     "./package.json": "./package.json"
   },
   "author": {
-    "name": "Vanvelthem Sébastien",
-    "url": "https://github.com/belgattitude"
+    "name": "ijyu",
+    "url": "https://github.com/in3166"
   },
   "license": "MIT",
-  "homepage": "https://github.com/belgattitude/nextjs-monorepo-example",
+  "homepage": "https://github.com/in3166/mono_repo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/belgattitude/nextjs-monorepo-example",
+    "url": "https://github.com/in3166/mono_repo",
     "directory": "packages/db-main-prisma"
   },
   "scripts": {
@@ -55,6 +55,7 @@
     "cross-env": "7.0.3",
     "dotenv-flow": "4.1.0",
     "dotenv-flow-cli": "1.1.1",
+    "eslint": "8.57.1",
     "execa": "9.5.1",
     "graphql": "^16.9.0",
     "is-port-reachable": "4.0.0",

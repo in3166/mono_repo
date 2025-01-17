@@ -1,6 +1,6 @@
 /**
  * Custom config base for projects that wants to enable regexp rules.
- * @see https://github.com/belgattitude/shared-dx/tree/main/packages/eslint-config-bases
+ * @see https://github.com/in3166/shared-dx/tree/main/packages/eslint-config-bases
  */
 
 const { filePatterns } = require('../config/file-patterns');

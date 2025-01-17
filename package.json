@@ -14,12 +14,11 @@
     "workspace"
   ],
   "author": {
-    "name": "Vanvelthem Sébastien",
-    "url": "https://github.com/belgattitude"
+    "name": "ijyu",
+    "url": "https://github.com/in3166"
   },
   "license": "MIT",
-  "homepage": "https://github.com/belgattitude/nextjs-monorepo-example",
-  "repository": "belgattitude/nextjs-monorepo-example",
+  "repository": "in3166/mono-repo",
   "scripts": {
     "check:git-pristine": "./scripts/check-git-pristine.sh",
     "clean:global-cache": "rimraf ./.cache",
@@ -59,7 +58,6 @@
     "@ijyu-3166/eslint-config-bases": "workspace:^",
     "@types/shell-quote": "1.7.5",
     "husky": "9.1.7",
-    "eslint": "^9.18.0",
     "lint-staged": "15.3.0",
     "npm-run-all2": "7.0.2",
     "prettier": "^3.4.2",

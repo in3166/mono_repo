@@ -12,14 +12,14 @@
     "./package.json": "./package.json"
   },
   "author": {
-    "name": "Vanvelthem Sébastien",
-    "url": "https://github.com/belgattitude"
+    "name": "ijyu",
+    "url": "https://github.com/in3166"
   },
   "license": "MIT",
-  "homepage": "https://github.com/belgattitude/nextjs-monorepo-example",
+  "homepage": "https://github.com/in3166/mono_repo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/belgattitude/nextjs-monorepo-example",
+    "url": "https://github.com/in3166/mono_repo",
     "directory": "packages/ts-utils"
   },
   "scripts": {
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@ijyu-3166/eslint-config-bases": "workspace:^",
-    "eslint": "^9.18.0",
+    "eslint": "8.57.1",
     "@size-limit/file": "11.1.6",
     "@types/node": "22.9.3",
     "@vitest/coverage-v8": "2.1.5",
