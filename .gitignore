@@ -5,7 +5,8 @@
 
 .env.local
 .env.*.local
-
+**/.next
+bin
 # security: atlassian/changeset
 
 **/.netrc
