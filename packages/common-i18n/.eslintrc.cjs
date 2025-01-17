@@ -23,6 +23,7 @@ module.exports = {
   ],
   rules: {
     // optional overrides per project
+    '@typescript-eslint/no-require-imports': 'off',
   },
   overrides: [
     // optional overrides per project file match

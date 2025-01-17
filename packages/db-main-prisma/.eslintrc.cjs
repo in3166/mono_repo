@@ -32,6 +32,7 @@ module.exports = {
       files: ['**/*seed.ts'],
       rules: {
         'sonarjs/no-duplicate-string': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
       },
     },
   ],
