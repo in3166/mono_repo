@@ -1,3 +1,5 @@
+import path from 'path'
+
 const debugI18n = ['true', 1].includes(
   process?.env?.NEXTJS_DEBUG_I18N ?? 'false'
 )
@@ -6,16 +8,14 @@ const localePublicFolder = undefined
 
 export const defaultLocale = 'en'
 
-const getLocalesPath = async () => {
+const getLocalesPath = () => {
   if ('window' in globalThis) {
     return localePublicFolder
   }
-  const path = await import('path').then(mod => mod.default)
   return path.resolve('../../packages/common-i18n/src/locales')
 }
 
-const localePath = await getLocalesPath()
-
+const localePath = getLocalesPath()
 /**
  * @type {import('next-i18next').UserConfig}
  */

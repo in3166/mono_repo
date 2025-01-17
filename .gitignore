@@ -3,9 +3,16 @@
 
 # local env files (followinf dotenv-flow / nextjs convention)
 
+.env
+.env.development
 .env.local
 .env.*.local
 **/.next
+*/.next
+**/.next/*
+*/.next/**
+**/.next/**
+./apps/next-shad/.next
 bin
 # security: atlassian/changeset
 

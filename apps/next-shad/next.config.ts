@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import url from 'node:url'
+import url, { fileURLToPath } from 'node:url'
 import { createSecureHeaders } from 'next-secure-headers'
 import pc from 'picocolors'
 import nextI18nConfig from './next-i18next.config.mjs'
@@ -16,7 +16,7 @@ const workspaceRoot = path.resolve(
 )
 
 const packageJson = JSON.parse(
-  readFileSync(new URL('package.json', import.meta.url).pathname, 'utf8')
+  readFileSync(fileURLToPath(new URL('package.json', import.meta.url)), 'utf8')
 )
 
 const isProd = process.env.NODE_ENV === 'production'

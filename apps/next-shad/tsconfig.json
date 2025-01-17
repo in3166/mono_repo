@@ -34,10 +34,17 @@
       "@/pages/*": ["./pages/*"],
       "@/public/*": ["../public/*"],
       "@/themes/*": ["./themes/*"],
+      "@ijyu-3166/common-i18n": ["../../../packages/common-i18n/src/index"],
+      "@ijyu-3166/common-i18n/locales/*": [
+        "../../../packages/common-i18n/src/locales/*"
+      ],
       "@ijyu-3166/ui-lib/*": ["../../../packages/ui-lib/src/*"],
       "@ijyu-3166/ui-lib": ["../../../packages/ui-lib/src/index"],
       "@ijyu-3166/core-lib/*": ["../../../packages/core-lib/src/*"],
       "@ijyu-3166/core-lib": ["../../../packages/core-lib/src/index"],
+      "@ijyu-3166/db-main-prisma": [
+        "../../../packages/db-main-prisma/src/index"
+      ],
       "@ijyu-3166/ts-utils": ["../../../packages/ts-utils/src/index"]
     }
   },
