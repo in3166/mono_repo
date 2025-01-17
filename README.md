@@ -444,6 +444,44 @@ See an example in [./apps/nextjs-app/.eslintrc.js](./apps/nextjs-app/.eslintrc.j
 Check the [.husky](./.husky) folder content to see what hooks are enabled. Lint-staged is used to guarantee
 that lint and prettier are applied automatically on commit and/or pushes.
 
+```bash
+<type>(<scope>): <subject>
+
+<body> (선택 사항)
+
+<footer> (선택 사항)
+```
+
+- Header
+
+  - type: 소문자, (build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test, translation, security)
+  - scope: 소문자, 변경이 적용된 코드 범위 (auth, ui, api 등)
+  - subject: 마침표 x, Sentence-case(첫 글자만 대문자), Start-case(모든 단어의 첫 글자 대문자), Pascal-case(단어를 대문자로 시작하고 이어 붙임), Upper-case(모두 대문자)
+  - 위 항목은 100자 이내
+
+- Body
+
+  - 빈 줄로 시작
+  - 각 줄은 100자 이내
+  - 변경 사항에 대한 추가 설명
+
+- Footer
+
+  - 빈 줄로 시작
+  - 각 줄은 100자 이내
+  - 참조 정보 추가 (JIRA, 티켓, 이슈 번호)
+
+- `git commit --edit`
+
+```base
+# 예시
+fix(auth): correct token expiration handling
+
+This fixes the token renewal process when it expires after 1 hour.
+
+Resolves: #123
+```
+
 ### 5.3 Tests
 
 Tests relies on ts-jest or vitest depending on the app. All setups supports typescript path aliases.
