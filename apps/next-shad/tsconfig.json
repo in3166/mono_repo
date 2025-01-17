@@ -59,7 +59,7 @@
     "**/*.mjs",
     "**/*.jsx",
     "**/*.json",
-    ".next/types/**/*.ts"
+    "../../bin/.next/types/**/*.ts"
   ],
   "extends": "../../tsconfig.base.json",
   "exclude": ["**/node_modules", "**/.*/*"]
