@@ -1,82 +1,39 @@
-<div align="center">
-  <h1 align="center"><a aria-label="NextJs Monorepo" href="https://github.com/in3166/mono_repo">NextJs Monorepo</a></h1>
-  <p align="center"><strong>Monorepo concepts, tips and tricks oriented around NextJs</strong></p>
-</div>
-<p align="center">
-  <a aria-label="Build" href="https://github.com/in3166/mono_repo/actions?query=workflow%3ACI">
-    <img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/belgattitude/nextjs-monorepo-example/main?label=CI&logo=github&style=flat-square">
-  </a>
-  <a aria-label="Codefactor grade" href=https://www.codefactor.io/repository/github/belgattitude/nextjs-monorepo-example">
-    <img alt="Codefactor" src="https://img.shields.io/codefactor/grade/github/belgattitude/nextjs-monorepo-example?label=Codefactor&logo=codefactor&style=flat-quare&labelColor=000000" />
-  </a>
-  <a aria-label="CodeClimate maintainability" href="https://codeclimate.com/github/belgattitude/nextjs-monorepo-example">
-    <img alt="Maintainability" src="https://img.shields.io/codeclimate/maintainability/belgattitude/nextjs-monorepo-example?label=Maintainability&logo=code-climate&style=flat-quare&labelColor=000000" />
-  </a>
-  <a aria-label="CodeClimate technical debt" href="https://codeclimate.com/github/belgattitude/nextjs-monorepo-example">
-    <img alt="Techdebt" src="https://img.shields.io/codeclimate/tech-debt/belgattitude/nextjs-monorepo-example?label=TechDebt&logo=code-climate&style=flat-quare&labelColor=000000" />
-  </a>
-  <a aria-label="Codacy grade" href="https://www.codacy.com/gh/belgattitude/nextjs-monorepo-example/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=belgattitude/nextjs-monorepo-example&amp;utm_campaign=Badge_Grade">
-    <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/dff9c944af284a0fad4e165eb1727467?logo=codacy&style=flat-square&labelColor=000&label=Codacy">
-  </a>
-  <a aria-label="LoC">  
-    <img alt="LoC" src="https://img.shields.io/tokei/lines/github/belgattitude/nextjs-monorepo-example?style=flat-quare&labelColor=000000" />
-  </a>
-  <a aria-label="Top language" href="https://github.com/in3166/mono_repo/search?l=typescript">
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/belgattitude/nextjs-monorepo-example?style=flat-square&labelColor=000&color=blue">
-  </a>
-  <a aria-label="Licence" href="https://github.com/in3166/mono_repo/blob/main/LICENSE">
-    <img alt="Licence" src="https://img.shields.io/github/license/belgattitude/nextjs-monorepo-example?style=flat-quare&labelColor=000000" />
-  </a>
-</p>
+## 패키지 및 명려어
 
-> Howtos for monorepo. New to monorepos ? [check this FAQ](./README.md#monorepo). This example is managed by turborepo and yarn 4 with a
-> / [typescript path aliases](https://www.typescriptlang.org/tsconfig#paths) approach. Not the only way to do.
+- `apps` 내의 프로젝트 실행하기
 
-Useful to
+  ```bash
+  pnpm --filter react-vite dev
+  ```
 
-- Establish a **structure** and present a lifecycle perspective (dx, ci/cd, deployments...)
-- How to create and consume **shared packages**, locales, assets, api types...
-- Integrate **tools & configs** (eslint, jest, playwright, storybook, changelogs, versioning, codecov, codeclimate...).
-- Clarify some **advantages** of monorepos (team cohesion, consistency, duplication, refactorings, atomic commits...).
-- Create nextjs/vercel/prisma... bug reports with **reproducible examples** _(initial goal of this repo)_.
+- **Syncpack**: Monorepo에서 각 프로젝트의 패키지 의존성 버전을 정리하고 일관성을 유지
 
-## Sponsors ❤️
+  ```bash
+  # 패키지 버전 문제 확인
+  pnpm syncpack list-mismatches
 
-If you are enjoying some of my OSS work in your company, I'd really appreciate a [sponsorship](https://github.com/sponsors/belgattitude), a [coffee](https://ko-fi.com/belgattitude) or a dropped star.
-That gives me some more time to improve it to the next level.
+  # 패키지 버전 자동 정리
+  pnpm syncpack fix-mismatches
 
-### Special thanks to
+  # package.json 정리 및 정렬
+  pnpm syncpack format
+  ```
 
-<table>
-  <tr>
-    <td>
-      <a href="https://www.jetbrains.com/?ref=belgattitude" target="_blank">
-         <img width="65" src="https://asset.brandfetch.io/idarKiKkI-/id53SttZhi.jpeg" alt="Jetbrains logo" />
-      </a>
-    </td>
-    <td>
-      <a href="https://www.embie.be/?ref=belgattitude" target="_blank">
-        <img width="65" src="https://avatars.githubusercontent.com/u/98402122?s=200&v=4" alt="Jetbrains logo" />    
-      </a>
-    </td>
-    <td>
-      <a href="https://www.vercel.com/?ref=belgattitude" target="_blank">
-        <img width="65" src="https://avatars.githubusercontent.com/u/14985020?s=200&v=4" alt="Vercel logo" />    
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://www.jetbrains.com/?ref=belgattitude" target="_blank">JetBrains</a>
-    </td>
-    <td align="center">
-      <a href="https://www.embie.be/?ref=belgattitude" target="_blank">Embie.be</a>
-    </td>
-    <td align="center">
-      <a href="https://vercel.com/?ref=belgattitude" target="_blank">Vercel</a>
-    </td>
-   </tr>
-</table>
+## 파일
+
+.npmrc → npm 설정 파일.
+.nvmrc → Node.js 버전 관리 파일.
+.syncpackrc.cjs → Syncpack 설정 파일 (패키지 버전 동기화 도구).
+cache.config.js → Turbo 빌드 캐시 관련 설정.
+CHANGELOG.md → 프로젝트 변경 내역 기록.
+commitlint.config.js → Commitlint 설정 파일 (커밋 메시지 규칙 적용).
+constraints.pro → 특정 제한 조건을 설정하는 파일(정확한 용도는 내부 확인 필요).
+lint-staged.common.js / lint-staged.config.js → Lint-staged 설정 (Git 커밋 전에 특정 파일만 린트 실행).
+renovate.json5 → Renovate(자동 패키지 업데이트 도구) 설정 파일.
+
+CODE_OF_CONDUCT.md → 오픈소스 프로젝트에서 준수할 행동 강령.
+TROUBLESHOOT.md → 프로젝트의 문제 해결 가이드.
+CONTRIBUTING.md → 프로젝트 기여 방법 문서.
 
 ## Install
 
@@ -86,8 +43,6 @@ yarn install
 ```
 
 ## Structure
-
-[![Open in Gitpod](https://img.shields.io/badge/Open%20In-Gitpod.io-%231966D2?style=for-the-badge&logo=gitpod)](https://gitpod.io/#https://github.com/in3166/mono_repo)
 
 ```
 .
@@ -525,84 +480,123 @@ To ensure decent performance, those features are present in the example actions:
   >    - ".eslintignore"
   > ```
 
-## 6. Editor support
-
-### 6.1 VSCode
-
-The ESLint plugin requires that the `eslint.workingDirectories` setting is set:
-
-```
-"eslint.workingDirectories": [
-    {
-        "pattern": "./apps/*/"
-    },
-    {
-        "pattern": "./packages/*/"
-    }
-],
-```
-
-More info [here](https://github.com/microsoft/vscode-eslint#mono-repository-setup)
-
-## 7. Deploy
-
-### Vercel
-
-Vercel support natively monorepos, see the [vercel-monorepo-deploy](./docs/deploy/deploy-vercel.md) document.
-
-### Docker
-
-There's a basic example for building a docker image, read the [docker doc](./docs/docker/docker.md).
-
-### Others
-
-Netlify, aws-amplify, k8s-docker, serverless-nextjs recipes might be added in the future. PR's welcome too.
-
-## FAQ
+<br />
 
 ### Monorepo
 
-#### Benefits
+#### ✅ 장점 (Benefits)
 
-- [x] **Ease of code reuse.** You can easily extract shared libraries (like api, shared ui, locales, images...) and use them across apps without
-      the need of handling them in separate git repos (removing the need to publish, version, test separately...). This limit the tendency to create code duplication
-      amongst developers when time is short.
-- [x] **Atomic commits.** When projects that work together are contained in separate repositories, releases need to sync which versions of one project work
-      with the other. In monorepo CI, sandboxes and releases are much easier to reason about (ie: [dependency hell](https://en.wikipedia.org/wiki/Dependency_hell)...).
-      A pull-request contains all changes at once, no need to coordinate multiple packages versions to test it integrally (multiple published canary versions...).
-- [x] **Code refactoring.** Changes made on a library will immediately propagate to all consuming apps / packages.
-      Typescript / typechecks, tests, ci, sandboxes... will improve the confidence to make a change _(or the right one thanks to improved discoverability of
-      possible side effects)_. It also limits the tendency to create tech debt as it invites the dev to refactor all the code that depends on a change.
-- [x] **Collaboration across teams**. Consistency, linters, discoverability, duplication... helps to maintain
-      cohesion and collaboration across teams.
+1. 코드 재사용 용이성
+   ✅ 공유 라이브러리(예: api, shared ui, locales, images 등)를 쉽게 분리하고 여러 애플리케이션에서 사용할 수 있습니다.
+   ✅ 별도의 Git 저장소에서 개별적으로 버전 관리, 테스트, 배포할 필요 없이 한 곳에서 관리할 수 있습니다.
+   ✅ 개발 시간이 부족할 때 중복 코드를 생성하는 경향을 줄여줍니다.
 
-#### Drawbacks
+2. 원자적 커밋 (Atomic commits)
+   ✅ 여러 개의 프로젝트가 별도 저장소에 있을 경우, 어떤 버전이 서로 호환되는지 동기화해야 하는 문제가 발생합니다.
+   ✅ Monorepo에서는 CI, 샌드박스 환경, 릴리즈 관리가 더 쉬워집니다 (예: 의존성 지옥).
+   ✅ 하나의 Pull Request에서 모든 변경 사항을 포함할 수 있어, 여러 패키지 버전을 조정하며 테스트할 필요가 없습니다.
 
-- [x] **Increased build time**. Generally a concern but not relevant in this context thanks to the combination of
-      nextjs/webpack5, typescript path aliases and yarn. Deps does
-      not need to be build... modified files are included as needed and properly cached (nextjs webpack5, ci, deploy, docker/buildkit...).
-- [x] **Versioning and publishing**. Sometimes a concern when you want to use the shared libraries outside of the monorepo.
-      See the notes about [atlassian changeset](https://github.com/atlassian/changesets). Not relevant here.
-- [x] **Git repo size**. All packages and apps and history will fit in the same git repository increasing its size and
-      checkout time. Generally when you reach size problems, check for assets like images first and extract
-      packages that don't churn anymore.
-- [x] **Multi-languages**. Setting up a monorepo containing code in multiple languages (php, ruby, java, node) is extremely
-      difficult to handle due to nonexistence of mature tooling (bazel...).The general idea is
-      to create a monorepo with the same stack (node, typescript...) and managed by the same
-      package manager (yarn, pnpm,...)
+3. 코드 리팩토링 용이성
+   ✅ 특정 라이브러리를 수정하면 이를 사용하는 모든 앱과 패키지에 즉시 반영됩니다.
+   ✅ TypeScript 타입 검사, 테스트, CI, 샌드박스 환경을 통해 변경 사항의 영향을 쉽게 파악할 수 있습니다.
+   ✅ 기술 부채(tech debt) 발생을 줄이며, 의존하는 코드까지 함께 리팩토링하도록 유도합니다.
 
-#### Exact vs semver dependencies
+4. 팀 간 협업 강화
+   ✅ 코드 일관성 유지, 린터 적용, 코드 발견 용이성, 중복 방지 등의 요소가 협업을 개선하는 데 기여합니다.
 
-Apps dependencies and devDependencies are pinned to exact versions. Packages deps will use semver compatible ones.
-For more info about this change see [reasoning here](https://docs.renovatebot.com/dependency-pinning/) and our
-[renovabot.json5](renovate.json5) configuration file.
+#### ❌ 단점 (Drawbacks)
 
-To help keeping deps up-to-date, see the `yarn deps:check && yarn deps:update` scripts and / or use the [renovatebot](https://github.com/marketplace/renovate).
+1. 빌드 시간 증가
+   ✅ 일반적으로 문제가 될 수 있지만, Next.js/Webpack 5, TypeScript 경로 별칭, Yarn을 사용하면 큰 문제가 되지 않습니다.
+   ✅ 의존성을 다시 빌드할 필요가 없으며, 수정된 파일만 캐시를 활용해 포함되므로 성능 최적화가 가능합니다.
 
-> When adding a dep through yarn cli (i.e.: yarn add something), it's possible to set the save-exact behaviour automatically
-> by setting `defaultSemverRangePrefix: ""` in [yarnrc.yml](./.yarnrc.yml). But this would make the default for packages/\* as well.
-> Better to handle `yarn add something --exact` on per-case basis.
+2. 버전 관리 및 패키지 배포
+   ✅ Monorepo 외부에서 공유 라이브러리를 사용하려면 버전 관리 및 배포가 복잡해질 수 있습니다.
+   ✅ Atlassian Changeset 사용을 고려할 수 있으며, 이 프로젝트에서는 해당 문제가 중요하지 않습니다.
 
-## License
+3. Git 저장소 크기 증가
+   ✅ Monorepo 내 모든 패키지, 애플리케이션, 변경 이력이 한 저장소에 포함되므로 Git 저장소 크기가 커질 수 있습니다.
+   ✅ 문제가 발생하면 이미지 등의 정적 자산을 분리하거나, 더 이상 변경되지 않는 패키지는 별도 저장소로 이동하는 것이 좋습니다.
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbelgattitude%2Fnextjs-monorepo-example.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbelgattitude%2Fnextjs-monorepo-example?ref=badge_large)
+4. 다양한 프로그래밍 언어 지원 어려움
+   ✅ 여러 언어(PHP, Ruby, Java, Node 등)를 포함하는 Monorepo는 적절한 도구(Bazel 등)가 부족하여 설정이 어렵습니다.
+   ✅ 일반적으로 하나의 스택(Node, TypeScript 등) 을 사용하며, 동일한 패키지 매니저(Yarn, pnpm 등)로 관리하는 것이 이상적입니다.
+
+#### 📌 정확한 버전 고정 vs Semver 버전 사용
+
+애플리케이션의 dependencies 및 devDependencies는 정확한 버전(Exact Version) 으로 고정합니다.
+패키지(packages/\*)의 의존성은 Semver(범위 지정 버전, ^, ~ 등) 을 사용하여 유연하게 관리합니다.
+자세한 이유는 여기에서 확인할 수 있으며,
+
+프로젝트 내 renovate.json5 설정 파일을 참고하세요.
+
+✅ 의존성 최신 상태 유지 방법
+
+yarn deps:check && yarn deps:update 스크립트를 사용하거나,
+Renovatebot과 같은 자동 업데이트 도구를 활용하세요.
+
+```bash
+# 의존성 상태 확인
+pnpm outdated
+
+# 업데이트 가능한 패키지 목록 확인
+pnpm update --latest
+
+# package.json을 유지하면서 patch 또는 minor만 업데이트
+pnpm update
+
+# 특정 패키지만 업데이트
+pnpm update react
+```
+
+#### 🛠 Yarn으로 의존성 추가 시 정확한 버전 고정 방법
+
+Yarn CLI로 패키지를 추가할 때 기본적으로 --exact 옵션을 적용할 수 있습니다.
+이를 위해 yarnrc.yml 파일에서 defaultSemverRangePrefix: "" 설정을 변경할 수 있습니다.
+
+하지만, 이는 Monorepo 내 모든 패키지(packages/\*)에도 영향을 미칠 수 있습니다.
+따라서, yarn add something --exact을 개별적으로 지정하는 것이 더 적절한 방법입니다.
+
+#### 📌 Renovate와 PR(GitHub Pull Request)
+
+- Renovate는 Git PR을 자동으로 생성하는 도구입니다.
+- 즉, 프로젝트의 dependencies가 오래되었을 경우, 자동으로 패키지를 업데이트하고 PR(Pull Request)을 생성하여 코드 변경을 제안합니다.
+
+```
+🔄 Renovate의 동작 방식
+1️⃣ 프로젝트의 의존성 분석
+
+renovate.json5 설정을 읽고, package.json, pnpm-lock.yaml 등의 패키지를 스캔하여 오래된 의존성을 찾음.
+2️⃣ 업데이트 가능한 패키지 확인
+
+pnpm outdated와 유사한 작업 수행.
+SemVer 정책을 기반으로 patch, minor, major 버전을 구분.
+3️⃣ 자동으로 패키지 업데이트
+
+pnpm update --latest 또는 특정 버전으로 패키지를 업데이트.
+4️⃣ PR(Pull Request) 생성
+
+업데이트된 package.json과 pnpm-lock.yaml을 포함한 자동 PR을 생성하여 검토할 수 있도록 함.
+제목 예시: "chore(deps): update react to 18.3.0"
+PR 설명에는 변경된 패키지 목록과 영향도를 제공.
+5️⃣ CI/CD 테스트 & 병합 (Merge)
+```
+
+PR을 생성하면 GitHub Actions, Jenkins, GitLab CI/CD 등의 자동 테스트가 실행됨.
+문제가 없다면 PR을 병합(merge)하여 업데이트를 적용.
+
+##### 📌 PR 생성 예제 (Renovate가 만든 PR 예시)
+
+PR 제목:
+`chore(deps): update dependency react to v18.3.0`
+
+PR 내용:
+`React를 18.2.0 → 18.3.0으로 업데이트합니다.`
+
+```
+기존 버전: react@18.2.0
+새로운 버전: react@18.3.0
+변경사항 참고: React 18.3.0 Release Notes
+```
+
+- 자동으로 업데이트했으며, 테스트가 통과하면 안전하게 병합할 수 있습니다.

@@ -29,9 +29,9 @@
   },
   "devDependencies": {
     "@ijyu-3166/eslint-config-bases": "workspace:^",
-    "@types/node": "22.9.3",
+    "@types/node": "22.10.6",
     "cross-env": "7.0.3",
-    "eslint": "8.57.1",
+    "eslint": "^8.57.1",
     "rimraf": "6.0.1"
   }
 }

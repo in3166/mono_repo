@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-dead-store */
 import { useState } from 'react';
 import './App.css';
 import { SButton } from '@ijyu-3166/ui-lib';

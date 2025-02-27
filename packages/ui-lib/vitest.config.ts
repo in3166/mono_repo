@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react-swc';
+import path from 'node:path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
@@ -11,6 +12,11 @@ export default defineConfig({
       // fastRefresh: false,
     }),
   ],
+  resolve: {
+    alias: {
+      '@lib': path.resolve(import.meta.dirname, 'src/lib'),
+    },
+  },
   cacheDir: '../../.cache/vitest/ui-lib',
   test: {
     globals: true,

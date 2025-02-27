@@ -40,11 +40,12 @@ export const LoginForm: FC<Props> = props => {
     setError(null)
     const { username, password } = formValues
     const result = await signIn('credentials', {
-      username,
+      email: username,
       password,
       // callbackUrl: '/',
       redirect: false
     })
+
     const {
       ok = false,
       status = 500,
@@ -61,13 +62,13 @@ export const LoginForm: FC<Props> = props => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-backgroundSecondary mx-auto flex w-full max-w-lg flex-col rounded-xl border border-border p-4 sm:p-20">
+      className="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
       <div className="flex w-full flex-col gap-2">
         <p>Sign in with</p>
         <div className="flex w-full flex-col gap-2">
           <button
             type="button"
-            className="btn bg-gray-5 gap-2">
+            className="btn gap-2 bg-gray-5">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -95,7 +96,7 @@ export const LoginForm: FC<Props> = props => {
           </button>
           <button
             type="button"
-            className="btn bg-gray-5 gap-2">
+            className="btn gap-2 bg-gray-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
@@ -106,7 +107,7 @@ export const LoginForm: FC<Props> = props => {
           </button>
           <button
             type="button"
-            className="btn bg-gray-5 gap-2">
+            className="btn gap-2 bg-gray-5">
             <svg
               width="21"
               aria-hidden="true"
@@ -126,7 +127,7 @@ export const LoginForm: FC<Props> = props => {
           </button>
         </div>
       </div>
-      <div className="divider text-content2 my-6 text-xs">or continue with</div>
+      <div className="divider my-6 text-xs text-content2">or continue with</div>
 
       <div className="form-group">
         <div className="form-field">
